@@ -1,2 +1,2 @@
 # Expense-Tracker
-A simple expense tracker app using react js
+A simple expense tracker app using react js. (In-progress)
