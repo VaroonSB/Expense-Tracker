@@ -1,6 +1,5 @@
-import Card from "./components/Card";
-import ExpenseItem from "./components/ExpenseItem";
-import "./components/Expenses.css";
+import NewExpense from "./components/NewExpenses/NewExpense";
+import Expenses from "./components/Expenses/Expenses";
 
 function App() {
   const expenses = [
@@ -24,20 +23,14 @@ function App() {
       date: new Date(2021, 5, 12),
     },
   ];
+  const updateExpense = (expense) => {
+    console.log(expense);
+    expenses.push(expense);
+  };
   return (
     <div>
-      <h2>Let's get started!</h2>
-      <p>Hello,its me playing around</p>
-      <Card className="expenses">
-        {expenses.map((expense) => (
-          <ExpenseItem
-            key={expense.id}
-            title={expense.title}
-            amount={expense.amount}
-            date={expense.date}
-          />
-        ))}
-      </Card>
+      <NewExpense onAddExpense={updateExpense} />
+      <Expenses expenses={expenses} />
     </div>
   );
 }
